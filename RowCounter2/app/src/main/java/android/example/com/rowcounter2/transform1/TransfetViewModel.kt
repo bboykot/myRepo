@@ -32,8 +32,6 @@ class TransfetViewModel( viewcount2:Int, application: Application, val databased
 
             mydbCountF.value= databasedao.getCount()
 
-            //_count2.value=mydbCountF.value!!.countNum
-
         }
     }
 

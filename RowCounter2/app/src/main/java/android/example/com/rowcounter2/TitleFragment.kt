@@ -24,13 +24,13 @@ class TitleFragment : Fragment() {
         //ссылка на наш источник данных
         val dataSource= RowCountDB.getInstance(application).countDataBaseDao
 
-        val viewModelFactory= TitleViewModelFactory(dataSource, application) //
+        val viewModelFactory= TitleViewModelFactory(dataSource, application)
 
         ttitleViewModel=ViewModelProvider(this, viewModelFactory).get(TitleViewModel::class.java)
 
         binding.xmlttitleViewModel=ttitleViewModel
 
-        //габлюдатель отображающий счет
+        //наблюдатель отображающий счет
         ttitleViewModel.count.observe(viewLifecycleOwner, Observer { newCount ->
             binding.countDisplay.text = newCount.toString()
         })
@@ -44,7 +44,6 @@ class TitleFragment : Fragment() {
                 this.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToTransformtest(newCount2,tt))
             }
         })
-        //this.findNavController().navigate(TitleFragmentDirections.ActionTitleFragmentToTransformtest(cc))
 
 
         binding.setLifecycleOwner(this)

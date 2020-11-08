@@ -10,20 +10,19 @@ import androidx.room.Update
 interface CountDataBaseDao {
 
     @Insert
-    suspend fun insert(myentity: MyEnt) //инсертим сущность в БД, так что сущность является входным параметром
-                                //вернее входной параметр имеет тип сущности
+    suspend fun insert(myentity: MyEnt)
 
     @Update
      suspend fun update(myentity: MyEnt)
 
     @Query("Select * from my_table1 where countId=:key")
-    suspend fun get(key: Long): MyEnt? //здесь мы селектим значения таблицы по ид, но делаем это по ключу и возвращаем строку - запись в сущности
+    suspend fun get(key: Long): MyEnt?
 
     @Query("Select * from my_table1 ORDER BY countId DESC LIMIT 1")
     suspend fun getCount(): MyEnt?
 
     @Query("Select * from my_table1")
-    fun getAllCount(): LiveData<List<MyEnt>> //здесь мы тоже селектим всю таблицу, но функция сохраняет все записи из таблицы в лайвдата объект, списокм
+    fun getAllCount(): LiveData<List<MyEnt>>
 
     @Query("DELETE FROM my_table1")
     suspend fun clear()

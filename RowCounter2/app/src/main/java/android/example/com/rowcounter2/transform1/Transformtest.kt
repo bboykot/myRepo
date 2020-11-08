@@ -32,8 +32,7 @@ class Transformtest : Fragment() {
 
         val dataSource= RowCountDB.getInstance(application).countDataBaseDao
 
-       // fragTransferViewModel = ViewModelProvider(this).get(TransfetViewModel::class.java)
-        //получаем аргументв фактори
+        //получаем аргументы в фактори
         factoryViewModel= TransfetViewModelFactory(TransformtestArgs.fromBundle(requireArguments()).countTransfer,application,dataSource)
         //создаем вьюмодел
         fragTransferViewModel = ViewModelProvider(this,factoryViewModel).get(TransfetViewModel::class.java)
@@ -49,7 +48,7 @@ class Transformtest : Fragment() {
         val args=TransformtestArgs.fromBundle(requireArguments())
         binding.argsTest.text=args.test.toString()
 
-        //
+
         binding.moveTotitle.setOnClickListener {
 
             this.findNavController().navigate(TransformtestDirections.actionTransformtestToTitleFragment())

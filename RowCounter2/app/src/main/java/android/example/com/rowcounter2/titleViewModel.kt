@@ -21,7 +21,6 @@ class TitleViewModel( val databasedao: CountDataBaseDao, application: Applicatio
     //переменная для отображения всех записей из БД во вью. обновляется автоматически при помощи рум
     var counts: LiveData<List<MyEnt>> = databasedao.getAllCount()
 
-    //val countdispLd = mydbCount.value
 
     init {
 
@@ -39,11 +38,10 @@ class TitleViewModel( val databasedao: CountDataBaseDao, application: Applicatio
 
             if (mydbCount.value==null){
                 databasedao.insert(MyEnt())
-                //после того как вставили строку, зановоп рисвоим значение mydbCount
+                //после того как вставили строку, заново присвоим значение mydbCount
                 mydbCount.value= databasedao.getCount()
             }
-            //так как у нас вначале переменная инициадизируется нулем, сделал так, чтобы инициализировалось сохраненным знаением из бд
-            //_count.value=mydbCount.value?.countNum
+
             mydbCount.value= databasedao.getCount()
             //сразу инициализируем нашу основную переменную лайвдаты, чтобы при запуске она равнялась записанному значению из БД. а потом
             // в самом низу внутри функции апдейта мы записывыаем в БД значение этой лайвдаты, так как прибавляем мы значение к нашей лайвдате _сcount
@@ -70,7 +68,7 @@ class TitleViewModel( val databasedao: CountDataBaseDao, application: Applicatio
 
           if (mydbCount.value==null){
               databasedao.insert(MyEnt())
-              //после того как вставили строку, зановоп рисвоим значение mydbCount
+              //после того как вставили строку, заново присвоим значение mydbCount
               mydbCount.value= databasedao.getCount()
           }
           //блок обновления значения счетчика в БД
@@ -83,7 +81,7 @@ class TitleViewModel( val databasedao: CountDataBaseDao, application: Applicatio
 
       }
   }
-    //ну тут ясно, удялем строку
+    //ну тут ясно, удялем строку, сбрасываем отображаемое значение на 0
     fun clearData(){
         viewModelScope.launch {
         databasedao.clear()

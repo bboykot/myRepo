@@ -32,7 +32,7 @@ class SpaceXGridAdapter (private val onClickListener: OnClickListener): ListAdap
         }
 
         override fun areContentsTheSame(oldItem: Models, newItem: Models): Boolean {
-            return oldItem.flightNumber == newItem.flightNumber
+            return oldItem.missionName == newItem.missionName
         }
     }
 

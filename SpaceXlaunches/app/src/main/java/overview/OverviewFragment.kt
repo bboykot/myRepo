@@ -34,7 +34,7 @@ class OverviewFragment : Fragment() {
 
         binding.viewModel = viewModel
 
-        //recycler + moving to OverviewFrafment
+        //recycler + moving to OverviewFragment
         binding.photosGrid.adapter= SpaceXGridAdapter(SpaceXGridAdapter.OnClickListener { Models ->
            this.findNavController().navigate(OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(Models))
         })

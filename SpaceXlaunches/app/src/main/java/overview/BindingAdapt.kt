@@ -26,8 +26,8 @@ fun bidImage(imgView: ImageView, imgUrl: String?){
             .apply(
                 RequestOptions()
                 .placeholder(R.drawable.loading_animation)
-                .error(R.drawable.ic_broken_image))
-                .fallback(R.drawable.ic_broken_image)
+                .error(R.drawable.ic_broken_image)
+                .fallback(R.drawable.ic_broken_image))
             .into(imgView)
 
     }

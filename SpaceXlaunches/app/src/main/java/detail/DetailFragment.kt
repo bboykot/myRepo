@@ -33,7 +33,7 @@ class DetailFragment : Fragment() {
         //connect xml to viewmodel class
         binding.viewModel=viewModel
 
-        //open youtube by pressing image - using onclick - demonstration liavedata observe
+        //open youtube by pressing image - using onclick - demonstration livedata observe
         viewModel.openYouTuBe.observe(viewLifecycleOwner, Observer { openYouTube->
             if (openYouTube){
 

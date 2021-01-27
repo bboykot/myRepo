@@ -2,4 +2,11 @@
     <string name="app_name">SpaceX-launches</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="network_error">Network error</string>
+    <string name="no_video">Launch dont have video</string>
+    <string name="open_article_btn">Open article</string>
+    <string name="open_wikipedia_btn">Read on wikipedia</string>
+    <string name="press_img">Press image to watch video</string>
+
+
 </resources>

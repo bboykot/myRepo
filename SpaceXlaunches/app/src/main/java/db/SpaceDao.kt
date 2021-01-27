@@ -17,7 +17,7 @@ interface SpaceDao {
     @Query("Select * from launches")
     suspend fun getData(): SpaceEntity?
 
-    @Query("select * from launches order by launchDate desc")
+    @Query("select * from launches")
     fun getLaunches(): LiveData<List<SpaceEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

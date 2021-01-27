@@ -16,7 +16,6 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Models>?) {
     adapter.submitList(data)
 }
 
-
 @BindingAdapter("imageUrl")
 fun bidImage(imgView: ImageView, imgUrl: String?){
     imgUrl?.let{

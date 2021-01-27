@@ -1,6 +1,7 @@
 package detail
 
 import android.content.Intent
+import android.example.com.spacex_launches.R
 import android.example.com.spacex_launches.databinding.FragmentDetailBinding
 import android.net.Uri
 import android.os.Bundle
@@ -45,7 +46,7 @@ class DetailFragment : Fragment() {
                     startActivity(intent)
                     viewModel.videoOpenned()
                 }
-                else Toast.makeText(context, "Launch dont have video", Toast.LENGTH_LONG).show()
+                else Toast.makeText(context, R.string.no_video, Toast.LENGTH_LONG).show()
             }
         })
 

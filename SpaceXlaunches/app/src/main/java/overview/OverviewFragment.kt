@@ -1,5 +1,6 @@
 package overview
 
+import android.example.com.spacex_launches.R
 import android.example.com.spacex_launches.databinding.FragmentOverviewBinding
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -43,7 +44,7 @@ class OverviewFragment : Fragment() {
         //display network error
         viewModel.networkResponse.observe(viewLifecycleOwner, Observer {response->
             if (viewModel.networkResponse.value != "ok") {
-                Toast.makeText(activity, "Network error", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, R.string.network_error, Toast.LENGTH_LONG).show()
             }
         })
         return binding.root

@@ -7,11 +7,12 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 @Parcelize
-data class Models(val flightNumber: Int,
-                  val missionName: String,
-                  val launchDate : String?,
-                  val details: String?,
-                  val modelsLinks: ModelsLinks
+data class Models(
+    val flightNumber: Int,
+    val missionName: String,
+    val launchDate : String?,
+    val details: String?,
+    val modelsLinks: ModelsLinks
 ): Parcelable {
 
     //format date to  "dd, MM, yyyy"
@@ -21,8 +22,9 @@ data class Models(val flightNumber: Int,
     var launchDateConverted: String= outputFormatter.format(myDate)
 
     @Parcelize
-    data class ModelsLinks(val mission_patch: String?,
-                           val videoLink: String?,
-                           val articleLink : String?,
-                           val wikipediaLink: String?): Parcelable
+    data class ModelsLinks(
+        val mission_patch: String?,
+        val videoLink: String?,
+        val articleLink : String?,
+        val wikipediaLink: String?): Parcelable
 }

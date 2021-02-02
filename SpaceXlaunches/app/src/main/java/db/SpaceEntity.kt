@@ -42,9 +42,10 @@ fun List<SpaceEntity>.asDdomainModel() = map {
         missionName = it.missionName,
         launchDate = it.launchDate,
         details = it.details,
-        Models.ModelsLinks(mission_patch = it.missionPatch,
-                           videoLink = it.videoLink,
-                           articleLink = it.articleLink,
-                           wikipediaLink = it.wikipediaLink)
+        Models.ModelsLinks(
+            mission_patch = it.missionPatch,
+            videoLink = it.videoLink,
+            articleLink = it.articleLink,
+            wikipediaLink = it.wikipediaLink)
     )
 }

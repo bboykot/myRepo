@@ -12,10 +12,11 @@ data class SpaceXProperty(
    val links: Links
 ){
 
-   data class Links(@Json (name = "mission_patch") val missionPatch: String?,
-                    @Json (name = "video_link") val videoLink: String?,
-                    @Json (name = "article_link") val articleLink: String?,
-                    @Json (name = "wikipedia") val wikipediaLink: String?)
+   data class Links(
+      @Json (name = "mission_patch") val missionPatch: String?,
+      @Json (name = "video_link") val videoLink: String?,
+      @Json (name = "article_link") val articleLink: String?,
+      @Json (name = "wikipedia") val wikipediaLink: String?)
 
 }
 

@@ -18,12 +18,15 @@ class DetailFragment : Fragment() {
 
     private lateinit var viewModel: DetailViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-       val binding = FragmentDetailBinding.inflate(inflater)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+
+        val binding = FragmentDetailBinding.inflate(inflater)
         binding.lifecycleOwner=this
 
-        //getting data from oerviewFragment
+        //getting data from overviewFragment
         val models = DetailFragmentArgs.fromBundle(arguments).models
 
         //creating viewmodel

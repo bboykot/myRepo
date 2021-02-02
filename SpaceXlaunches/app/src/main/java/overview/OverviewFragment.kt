@@ -19,7 +19,8 @@ class OverviewFragment : Fragment() {
     private lateinit var viewModel: OverviewViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
 
 
@@ -27,7 +28,7 @@ class OverviewFragment : Fragment() {
 
         binding.lifecycleOwner=this
 
-        //block of creating viewModel and transfering parameters to him
+        //block of creating viewModel and transferring parameters to him
         val application = requireNotNull(this.activity).application
         val dataSource = SpaceDatabase.getInstance(application).spaceDao
         val viewModelFactory = OverviewViewModelFactory(dataSource, application)
